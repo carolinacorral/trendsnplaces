@@ -12,7 +12,9 @@ The script returns:
 This is a commentated script that saves the plot as a pdf
 
 #interest.py
-This is a script inteded to be used as a Python library
+This is a script inteded to be used as a Python library. The function generate_graphs() can be used like this:
+    API_KEY = 'example_key'
+    generate_graphs('dog park','US-CA',API_KEY=API_KEY)
 
 Some considerations must be made before using this script
 
