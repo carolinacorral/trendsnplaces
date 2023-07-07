@@ -22,8 +22,8 @@ pytrend = TrendReq()
 keyword = 'dog park' 
 geo = 'US-CA'
 
-# Replace with API key
-API_KEY = 'API_KEY'
+# Replace YOUR_API_KEY with your actual API key
+API_KEY = 'YOUR_API_KEY'
 
 # Build the payload
 pytrend.build_payload(kw_list=[keyword], geo=geo)
@@ -126,7 +126,7 @@ merged_df = loc_df.merge(results_df[['geoName', 'num_results']], on='geoName')
 
 merged_df = merged_df[merged_df[keyword] != 0]
 
-# Calculate the division between 'num_results' and 'interest' 
+# Calculate the division between 'num_results' and 'chiropractor' 
 merged_df['division'] = merged_df.apply(lambda row: round(row['num_results'] / row[keyword], 2), axis=1)
 
 
@@ -167,8 +167,6 @@ sorted_by_interest = merged_df.sort_values(keyword, ascending=False)
 # Sort the dataframe by num_places value in descending order
 sorted_by_num_places = merged_df.sort_values('num_results', ascending=False)
 
-
-
 # Histogram of interest values
 interest_rank = plt.figure(figsize=(10,6))
 plt.barh(sorted_by_interest['geoName'], sorted_by_interest[keyword])
@@ -186,7 +184,7 @@ plt.title('Places Ranked by Number of Results')
 plt.xticks(rotation=90)
 
 # Create a PDF object
-pdf_file = pdf.PdfPages('PATH.pdf')
+pdf_file = pdf.PdfPages('C:/Users/Carolina/proyc/metodos/trends/results/results.pdf')
 
 # Add each plot to the PDF file
 pdf_file.savefig(sct, bbox_inches='tight')
@@ -197,3 +195,4 @@ pdf_file.savefig(nums_rank, bbox_inches='tight')
 
 # Close the PDF file
 pdf_file.close()
+
