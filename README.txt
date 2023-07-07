@@ -8,8 +8,11 @@ The script returns:
 - A histogram for interest per location.
 - A histogram for availability per location.
 
-In the python notebook, there is detailed commentary on the step-by-step process and the justification behind each
-step. 
+#interest_analysis.py
+This is a commentated script that saves the plot as a pdf
+
+#interest.py
+This is a script inteded to be used as a Python library
 
 Some considerations must be made before using this script
 
